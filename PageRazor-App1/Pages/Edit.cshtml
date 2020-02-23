@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model PageRazor_App1.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Edition Client - @Model.Customer.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Customer.Id" type="hidden"/>
+    <div>
+        <label asp-for="Customer.Name"/>
+        <div>
+            <input asp-for="Customer.Name" />
+            <span asp-validation-for="Customer.Name"></span>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </div>
+</form>
